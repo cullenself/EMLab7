@@ -14,7 +14,6 @@ arg_force = data(:,5); % deg
 force = cal(1)*V_force + cal(2);
 accel = V_accel/.206 * 9.81; % TODO: remove gravity?
 displacement = accel./((2*pi*f).^2); %
-displacement = displacement / 1e-6; % micrometer
 
 %% Plots
 % Acceleration vs Freq Plot
@@ -27,7 +26,7 @@ print(strcat(out_prefix,'_acc'),'-dpng');
 
 % Displacement vs Freq Plot
 figure();
-plot(f,displacement);
+plot(f,displacement/1e-6); % put in micrometers
 xlabel('Frequency (Hz)');
 ylabel('Displacement ({\mu}m)');
 title('Displacement vs Excitation Frequency');
