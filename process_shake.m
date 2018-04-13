@@ -1,6 +1,7 @@
 function [  ] = process_shake( fn , cal, out_prefix)
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+%% Process Shake
+% Read 'csv' file output by SweptSine and convert voltages to useful information
+% Cullen Self
 
 %% Input
 data = csvread(fn,1,0);
